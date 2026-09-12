@@ -8,7 +8,7 @@
     <meta name="keywords" content="Saumiya Ranjan Mishra, saumiyaranjan, saumiyaranjanmishra">
     <meta name="programmer" content="Saumiya Ranjan Mishra">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+  
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,47 +19,149 @@
     <link rel="icon" type="image/gif" href="/image/title.gif"/>
 </head>
 <body class="main-body">
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+      <i class="fa-solid fa-sun theme-icon theme-icon-sun" aria-hidden="true"></i>
+      <span class="theme-toggle-track" aria-hidden="true"><span class="theme-toggle-thumb"></span></span>
+      <i class="fa-solid fa-moon theme-icon theme-icon-moon" aria-hidden="true"></i>
+    </button>
     
-    <span class="containerLoader" id = "containerLoader"></span>
-    <!--?xml version="1.0" standalone="no"?-->              
-    <svg id="sw-js-blob-svg" height = "100" width = "200" xmlns="http://www.w3.org/2000/svg">                    <defs>                         <linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0">                            <stop id="stop1" stop-color="rgba(0, 255, 224.764, 1)" offset="0%"></stop>                            
-        <stop id="stop2" stop-color="rgba(251, 168, 31, 1)" offset="100%"></stop>                        </linearGradient>                    </defs>                <path fill="url(#sw-gradient)" d="M32.6,-15.8C39.1,-7.7,38.9,7.3,32.4,18.8C25.8,30.3,12.9,38.1,0.6,37.8C-11.7,37.4,-23.4,28.9,-27.2,19C-30.9,9.2,-26.7,-1.9,-20.9,-9.7C-15,-17.5,-7.5,-21.9,2.8,-23.5C13.1,-25.1,26.2,-23.9,32.6,-15.8Z" width = "10" height = "10"  stroke-width="0" style="transition: all 0.3s ease 0s;" stroke="url(#sw-gradient)"></path>              </svg>
-    <header>
+     <div id="loader">
+    <div class="loader-content">
 
-    </header>
-    
-    <main class = "inner-body container">
-        <div class = "row">
-            <div class = "col-12">
-                <h1>Hi I am <span class ="name">Saumiya Ranjan Mishra</span></h1>
-            </div>
-        </div>
+      <div class="brand">Saumiya's Portfolio</div>
 
-        <div class="row">
-            <div class="col-12 body-description">
-                <i class="fa-solid fa-map-pin fa-beat-fade" style="color: black;"></i> Cuttack, Odisha
-            </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-12">
-                <a href = "https://www.linkedin.com/in/saumiya-ranjan"><i class="fa fa-brands fa-linkedin-in"></i></a>
-                <a href = "https://www.github.com/Saumiya-Ranjan"><i class="fa fa-brands fa-github"></i></a>
-                <a href = "https://twitter.com/saumiyaranjan"><i class="fa fa-brands fa-x-twitter"></i></a>
-                <a href = "https://facebook.com/saumiya.ranjanmishra/"><i class="fa fa-brands fa-facebook"></i></a>
-                <a href = "https://instagram.com/saumiyaranjanmishra"><i class="fa fa-brands fa-instagram"></i></a>
-                <a href = "https://threads.net/saumiyaranjanmishra"><i class=" fa fa-brands fa-threads"></i></a>
-                <btn onclick="resume()"> <i class="fa fa-regular fa-file"></i></a>
-                <!-- <a href = "#"><i class="fa fa-brands fa-whatsapp"></i></a> -->
-                
-            </div>
-        </div>
-        
+      <div class="chart">
+        <svg viewBox="0 0 360 120" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#2563eb"/>
+              <stop offset="100%" stop-color="#2563eb" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+
+          <path
+            class="chart-area"
+            d="M0,105 L0,90 L55,75 L105,85 L155,45 L205,65 L255,25 L310,45 L360,15 L360,120 L0,120 Z">
+          </path>
+
+          <path
+            class="chart-line"
+            d="M0,90 L55,75 L105,85 L155,45 L205,65 L255,25 L310,45 L360,15">
+          </path>
+
+          <circle class="chart-dot" cx="360" cy="15" r="4"></circle>
+        </svg>
+      </div>
+
+      <h1 class="title">Preparing your insights</h1>
+      <p class="status" id="status">Loading portfolio...</p>
+
+      <div class="progress-background">
+        <div class="progress" id="progress"></div>
+      </div>
+
+      <div class="percentage" id="percentage">0%</div>
+
+    </div>
+  </div>
+  <main>
+    <h1>Welcome to My Portfolio</h1>
+    <p>Data Analyst | Future Data Scientist</p>
+    <!-- The developer scene visualizes the dashboard being assembled piece by piece. -->
+    <div class="dashboard-scene" role="img" aria-label="A developer wearing glasses works on a MacBook while chart cards float toward a dashboard board">
+      <svg class="dashboard-scene-art" viewBox="0 0 720 250" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="board-gradient" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ffffff" stop-opacity="0.98" />
+            <stop offset="1" stop-color="#dbeafe" stop-opacity="0.9" />
+          </linearGradient>
+          <filter id="board-shadow" x="-20%" y="-20%" width="140%" height="150%">
+            <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.16" />
+          </filter>
+        </defs>
+
+        <path class="scene-wall-line" d="M34 201H686" />
+        <rect class="dashboard-board" x="365" y="26" width="300" height="165" rx="12" filter="url(#board-shadow)" />
+        <path class="board-header-line" d="M390 59H640" />
+        <circle class="board-dot" cx="391" cy="44" r="4" />
+        <circle class="board-dot board-dot-muted" cx="405" cy="44" r="4" />
+        <circle class="board-dot board-dot-muted" cx="419" cy="44" r="4" />
+
+        <g class="board-chart board-chart-one">
+          <rect x="390" y="77" width="105" height="88" rx="8" />
+          <path d="M406 144L430 125L447 133L472 99" />
+          <circle cx="406" cy="144" r="3" /><circle cx="430" cy="125" r="3" /><circle cx="447" cy="133" r="3" /><circle cx="472" cy="99" r="3" />
+        </g>
+        <g class="board-chart board-chart-two">
+          <rect x="510" y="77" width="130" height="40" rx="8" />
+          <rect class="mini-bar mini-bar-one" x="527" y="91" width="9" height="14" rx="3" />
+          <rect class="mini-bar mini-bar-two" x="544" y="85" width="9" height="20" rx="3" />
+          <rect class="mini-bar mini-bar-three" x="561" y="96" width="9" height="9" rx="3" />
+          <rect class="mini-bar mini-bar-four" x="578" y="81" width="9" height="24" rx="3" />
+          <rect class="mini-bar mini-bar-five" x="595" y="88" width="9" height="17" rx="3" />
+        </g>
+        <g class="board-chart board-chart-three">
+          <rect x="510" y="125" width="130" height="40" rx="8" />
+          <circle class="donut-base" cx="538" cy="145" r="13" />
+          <path class="donut-progress" d="M538 132A13 13 0 1 1 527 152" />
+          <rect class="legend-line" x="565" y="139" width="47" height="5" rx="2.5" />
+          <rect class="legend-line legend-line-short" x="565" y="149" width="31" height="5" rx="2.5" />
+        </g>
+
+        <!-- The laptop back faces the viewer while its open screen faces the developer. -->
+        <g class="developer">
+          <path class="developer-hood" d="M126 208Q130 144 180 137Q230 144 244 208Z" />
+          <path class="developer-shirt" d="M142 156Q180 139 220 156L232 208H130Z" />
+          <circle class="developer-head" cx="180" cy="102" r="43" />
+          <path class="developer-hair" d="M140 101Q139 56 181 54Q222 55 221 102Q207 78 183 77Q157 80 140 101Z" />
+          <path class="developer-cap" d="M141 84Q146 51 181 49Q215 51 222 84Q183 70 141 84Z" />
+          <path class="developer-cap-brim" d="M139 83Q168 76 207 83Q189 94 145 91Z" />
+          <path class="developer-glasses" d="M145 98H171Q175 98 175 103V107Q175 112 170 112H150Q145 112 145 107ZM185 103Q185 98 190 98H215Q219 98 219 103V107Q219 112 214 112H190Q185 112 185 107ZM175 102H185" />
+          <circle class="developer-eye developer-eye-left" cx="161" cy="105" r="3" /><circle class="developer-eye developer-eye-right" cx="202" cy="105" r="3" />
+          <path class="developer-face" d="M174 121Q180 125 186 121" />
+          <path class="hoodie-cord hoodie-cord-left" d="M166 157V180" /><path class="hoodie-cord hoodie-cord-right" d="M194 157V180" />
+          <circle class="hoodie-toggle" cx="166" cy="181" r="3" /><circle class="hoodie-toggle" cx="194" cy="181" r="3" />
+          <path class="developer-arm developer-arm-back" d="M145 156Q185 157 220 192" />
+          <path class="developer-arm developer-arm-front" d="M218 157Q194 168 171 193" />
+          <circle class="developer-hand developer-hand-back" cx="220" cy="192" r="9" />
+          <circle class="developer-hand developer-hand-front" cx="171" cy="193" r="9" />
+        </g>
+
+        <!-- The 16:9 laptop lid is in front of the hands, making the developer look seated and working. -->
+        <g class="laptop">
+          <rect class="laptop-lid" x="105" y="148" width="150" height="84.375" rx="7" />
+          <g class="microsoft-logo">
+            <rect x="174" y="181" width="10" height="10" /><rect x="187" y="181" width="10" height="10" />
+            <rect x="174" y="194" width="10" height="10" /><rect x="187" y="194" width="10" height="10" />
+          </g>
+          <path class="laptop-base" d="M95 232.375H265L277 239.375H83Z" />
+          <path class="laptop-highlight" d="M111 232.375H249" />
+        </g>
+
+        <g class="chart-card chart-card-line">
+          <rect width="72" height="45" rx="7" />
+          <path d="M12 32L25 23L36 27L51 13L61 18" />
+        </g>
+        <g class="chart-card chart-card-bars">
+          <rect width="72" height="45" rx="7" />
+          <rect class="card-bar" x="13" y="25" width="7" height="11" rx="2" /><rect class="card-bar" x="25" y="18" width="7" height="18" rx="2" /><rect class="card-bar" x="37" y="27" width="7" height="9" rx="2" /><rect class="card-bar" x="49" y="12" width="7" height="24" rx="2" />
+        </g>
+        <g class="chart-card chart-card-donut">
+          <rect width="72" height="45" rx="7" />
+          <circle class="card-donut-base" cx="23" cy="22" r="11" /><path class="card-donut-progress" d="M23 11A11 11 0 1 1 14 27" />
+          <rect x="41" y="17" width="20" height="5" rx="2" /><rect x="41" y="26" width="13" height="5" rx="2" />
+        </g>
+
+      </svg>
+    </div>
+    <p>Revamping till then vibe....🎧</p>
+    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4vY1x8THWT3eLHuAk3ZwWR?utm_source=generator&si=2b74a2e3f1f14ef6" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+ 
     </main>
     <footer>
-        <div class="outer-body container-fluid text-center">
-            Made with <i class=" heart fa-solid fa-heart fa-beat fa-sm" ></i> by<a href = "index.html"> Saumiya Ranjan Mishra </a><br> &copy;<span id = "year"></span>  
-        </div>
+      <div class="outer-body container-fluid text-center">
+        Made with <i class="heart fa-solid fa-heart fa-beat fa-sm"></i> by <a href="index.html">Saumiya Ranjan Mishra</a><br>&copy; <span id="year"></span>
+      </div>
     </footer>
     <script src="js/page.js"></script>
     <script src="js/bootstrap.min.js"></script>
